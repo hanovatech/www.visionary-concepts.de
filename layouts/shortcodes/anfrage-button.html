@@ -1,0 +1,45 @@
+{{ $id := delimit (shuffle (seq 1 4)) "" }}
+{{ $type := .Get "type" }}
+
+<div class="my-8 lg:!text-left" style="text-align: center">
+  <a class="btn btn-primary hover-ripple" href="#{{ $id }}">
+    Jetzt Anfrage stellen
+  </a>
+</div>
+
+<dialog id="{{ $id }}" class="z-10 scroll-mt-40">
+  <div class="fixed inset-0 mb-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+  <div class="fixed inset-0 z-10 mb-0 p-2 h-screen w-screen overflow-y-scroll flex items-center justify-center">
+    <div class="relative p-6 w-full max-w-2xl max-h-[90%] overflow-y-scroll bg-white border rounded-xl shadow-lg">
+      <a href="#" class="hidden lg:block absolute top-4 right-5">X</a>
+      <h2 class="text-4xl">Anfrageformular</h2>
+      <p>Geben Sie uns bitte alle wichtigen Informationen zu Ihrer Veranstaltung mit!</p>
+    <form class="mb-0">
+        <h3 class="text-3xl">Was benötigen Sie für Ihr Event?</h3>
+        <div class="flex flex-row items-center justify-between">
+          <p class="mb-0 text-lg">Passende Eventlocation</p>
+          <label class="mb-0 switch">
+            <input type="checkbox">
+            <span class="mb-0 slider round"></span>
+          </label>
+        </div>
+        <div class="flex flex-row items-center justify-between">
+          <p class="mb-0 text-lg">Leckeres Catering</p>
+          <label class="mb-0 switch">
+            <input type="checkbox">
+            <span class="mb-0 slider round"></span>
+          </label>
+        </div>
+        <div class="flex flex-row items-center justify-between">
+          <p class="mb-0 text-lg">Tolle Technik</p>
+          <label class="mb-0 switch">
+            <input type="checkbox">
+            <span class="mb-0 slider round"></span>
+          </label>
+        </div>
+        <button type="submit" class="w-full btn btn-primary">Anfrage abschicken</button>
+        <a href="#" class="mb-0 block text-center">Abbrechen</a>
+      </form>
+    </div>
+  </div>
+</dialog>

@@ -1,0 +1,59 @@
+############# English navigation ##############
+main:
+  - name: "Firmenfeiern"
+    weight: 1
+    hasChildren: true
+  - name: "Weihnachtsfeier"
+    url: "/events/weihnachtsfeier"
+    parent: "Firmenfeiern"
+    weight: 1
+  - name: "Sommerfest"
+    url: "/events/sommerfest"
+    parent: "Firmenfeiern"
+    weight: 2
+  - name: "Messestand"
+    url: "/events/messe"
+    parent: "Firmenfeiern"
+    weight: 3
+  - name: "Private Feiern"
+    weight: 2
+    hasChildren: true
+  - name: "Hochzeiten"
+    url: "/events/hochzeiten"
+    parent: "Private Feiern"
+    weight: 1
+  - name: "Geburtstage"
+    url: "/events/geburtstag"
+    parent: "Private Feiern"
+    weight: 2
+  - name: "Jubileum"
+    url: "/events/jubileum"
+    parent: "Private Feiern"
+    weight: 3
+  - name: "Eventlocations"
+    url: "/eventlocations"
+    weight: 3
+    params:
+      section: "eventlocations"
+      sectionNameKey: "details.name"
+  - name: "Eventservices"
+    url: "/event-services"
+    hasChildren: true
+    weight: 4
+  - name: "Catering"
+    url: "/services/catering"
+    parent: "Eventservices"
+    weight: 1
+  - name: "Personal"
+    url: "/services/personal"
+    parent: "Eventservices"
+    weight: 2
+  - name: "Technik"
+    url: "/services/technik"
+    parent: "Eventservices"
+    weight: 3
+  - name: "Floristik"
+    url: "/services/floristik"
+    parent: "Eventservices"
+    weight: 4
+

@@ -1,0 +1,350 @@
+{{ define "main" }}
+
+{{ with .Params.hero_slider }}
+{{ if .enable }}
+{{ "<!-- slider -->" | safeHTML }}
+<section>
+  <div class="hero-slider">
+    {{ range .slider_item }}
+    {{ "<!-- slider item -->" | safeHTML }}
+    <div
+      class="hero-slider-item bg-cover hero-section"
+      style="background-image: url('{{ .bg_image_webp | absURL }}');"
+    >
+      <!-- this image is for trigger this section fallback background image -->
+      <img
+        class="d-none"
+        src="{{ .bg_image_webp | absURL }}"
+        onerror="this.onerror=null;this.parentElement.style.backgroundImage='url({{ .bg_image | absURL }})'"
+      />
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-lg-6"
+            data-duration-in=".3"
+            data-animation-in="{{ .animation }}"
+            data-delay-in=".1"
+          >
+            <h4 class="mb-0 letter-spacing">{{ .subtitle | markdownify }}</h4>
+            <h1 class="mb-4">{{ .title | markdownify }}</h1>
+            <p class="mb-5 text-gray-800">{{ .content | markdownify }}</p>
+            {{ if .button.enable }}
+            <a
+              href="{{ .button.link | absLangURL }}"
+              class="btn btn-primary-outline"
+              data-duration-in=".3"
+              data-animation-in="{{ .button.animation }}"
+              data-delay-in=".4"
+            >
+              {{ .button.label }}
+            </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ "<!-- /slider -->" | safeHTML }}
+{{ end }}
+{{ end }}
+
+{{ with .Params.banner_feature}} 
+{{ if .enable}} 
+{{ "<!-- banner feature -->" | safeHTML }}
+<section class="banner-feature-wrapper">
+  <div class="container">
+    <div class="row justify-content-center">
+      {{ range .feature_item }} {{ "<!-- feature item -->" | safeHTML }}
+      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
+        <div class="bg-white py-5 px-4 text-center box-shadow banner-feature">
+          {{ with .icon }}
+          <div class="icon-bg mb-4 water-wave">
+            <i class="{{ . }} icon text-primary"></i>
+          </div>
+          {{ end }}
+          <h4 class="mb-4">{{ .name | markdownify }}</h4>
+          <p>{{ .content | markdownify }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ "<!-- /banner feature -->" | safeHTML }}
+{{ end }}
+{{ end }}
+
+{{ if .Params.about.enable }} 
+{{ "<!-- about us -->" | safeHTML }}
+<section class="section pt-0">{{ partial "about-section.html" . }}</section>
+{{ "<!-- /about us -->" | safeHTML }}
+{{ end }} 
+
+{{ with .Params.funfacts }} 
+{{ if .enable }}
+{{ "<!-- funfacts -->" | safeHTML }}
+<section class="funfacts">
+  <div class="container">
+    <div class="row bg-secondary p-5">
+      {{ range .funfacts_item }} {{ "<!-- funfacts item -->" | safeHTML }}
+      <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+        <div class="d-flex align-items-center">
+          <i class="{{ .icon }} icon-lg mr-3 text-primary"></i>
+          <div>
+            <h3 class="text-white mb-0">
+              <span class="count" data-count="{{ .count }}">0</span>+
+            </h3>
+            <span class="text-white">{{ .name }}</span>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ "<!-- /funfacts -->" | safeHTML }}
+{{ end }}
+{{ end }}
+
+
+
+{{ "<!-- eventlocations -->" | safeHTML }}
+<section class="section pb-0 bg-gray-white">
+  <div class="pb-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="section-title-border"></div>
+          <span class="block section-title-sm uppercase">Eventlocations in Hannover</span>
+          <h2>Locations für jedes Event</h2>
+        </div>
+        <div class="col-md-4 text-right align-self-end d-md-block d-none">
+          <a href="/eventlocations" class="btn btn-primary mb-3 hover-ripple">
+            Alle Locations
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid px-0">
+    <div class="row no-gutters">
+      {{ with site.GetPage "eventlocations" }}
+      {{ range first 4 .Data.Pages }}
+      {{ "<!-- project-item -->" | safeHTML }}
+      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
+        <div class="project-item mb-5">
+          <div class="position-relative mb-4 overflow-hidden">
+            <img loading="lazy" src="{{.Params.details.image | absURL }}" alt="{{ .Title }}" class="img-fluid w-100 !h-[300px] object-cover">
+            <a href="{{ .Permalink }}" class="hover-overlay flex items-center justify-center text-3xl !text-white font-bold uppercase">
+              Zur Location
+            </a>
+          </div>
+          <div class="px-4">
+            <span class="block text-primary">{{ .Params.details.city }}</span>
+            <a class="text-2xl text-dark font-bold uppercase" href="{{ .Permalink }}" aria-label="project image full view">{{ .Params.details.name }}</a>
+            {{ if .Params.details.description }}
+              <p class="mt-2">{{ .Params.details.description }}</p>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+  <div class="md:hidden text-center">
+    <a href="/event-services" class="btn btn-primary mb-3 hover-ripple">
+      Alle Eventlocations anzeigen
+    </a>
+  </div>
+</section>
+{{ "<!-- /eventlocations -->" | safeHTML }}
+
+
+
+{{ "<!-- event-services -->" | safeHTML }}
+<section class="section bg-gray-white">
+  <div class="pb-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="section-title-border"></div>
+          <span class="block section-title-sm uppercase">Event Services</span>
+          <h2>Unterstützung für Ihr Event</h2>
+        </div>
+        <div class="col-md-4 text-right align-self-end d-md-block d-none">
+          <a href="/event-services" class="btn btn-primary mb-3 hover-ripple">
+            Alle Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid px-0">
+    <div class="row no-gutters">
+      {{ with site.GetPage "event-services" }}
+      {{ range first 4 .Data.Pages }}
+      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
+        <div class="project-item mb-5">
+          <div class="position-relative mb-4 overflow-hidden">
+            <img loading="lazy" src="{{.Params.details.image | absURL }}" alt="{{ .Title }}" class="img-fluid w-100 !h-[300px] object-cover">
+            <a href="{{ .Permalink }}" class="hover-overlay flex items-center justify-center text-3xl !text-white font-bold uppercase">
+              {{ .Params.gotoLabel | default "Zum Service" }}
+            </a>
+          </div>
+          <div class="px-4">
+            <span class="block text-primary">{{ .Params.details.shortname }}</span>
+            <a class="text-2xl text-dark font-bold uppercase" href="{{ .Permalink }}" aria-label="project image full view">{{ .Params.details.name }}</a>
+            {{ if .Params.details.description }}
+              <p class="mt-2">{{ .Params.details.description }}</p>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+  <div class="md:hidden text-center">
+    <a href="/event-services" class="btn btn-primary mb-3 hover-ripple">
+      Alle Services anzeigen
+    </a>
+  </div>
+</section>
+{{ "<!-- /event-services -->" | safeHTML }}
+
+
+
+{{ with .Params.cta }} 
+{{ "<!-- call-to-action -->" | safeHTML }}
+<section
+  class="section overlay-secondary bg-fixed"
+  style="background-image: url('{{ .bg_image_webp | absURL }}');"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-11 text-center mx-auto">
+        <h2 class="section-title text-white">{{ .title | markdownify }}</h2>
+        {{ if .button.enable }}
+        {{ with .button }}
+        <a href="{{ .link | absLangURL }}" class="btn btn-primary hover-ripple">
+          {{ .label }}
+        </a>
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ "<!-- /call-to-action -->" | safeHTML }}
+{{ end }}
+
+
+
+{{ "<!-- mobile-events -->" | safeHTML }}
+<section class="section bg-gray-white pb-0">
+  <div class="pb-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="section-title-border"></div>
+          <span class="block section-title-sm uppercase">Mobile Events</span>
+          <h2>Mobile Events, immer und überall</h2>
+        </div>
+        <div class="col-md-4 text-right align-self-end d-md-block d-none">
+          <a href="/event-services" class="btn btn-primary mb-3 hover-ripple">
+            Alle Services
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid px-0">
+    <div class="row no-gutters">
+      {{ with site.GetPage "mobile-events" }}
+      {{ range first 4 .Data.Pages }}
+      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
+        <div class="project-item mb-5">
+          <div class="position-relative mb-4 overflow-hidden">
+            <img loading="lazy" src="{{.Params.details.image | absURL }}" alt="{{ .Title }}" class="img-fluid w-100 !h-[300px] object-cover">
+            <a href="{{ .Permalink }}" class="hover-overlay flex items-center justify-center text-3xl !text-white font-bold uppercase">
+              {{ .Params.gotoLabel | default "Zum Service" }}
+            </a>
+          </div>
+          <div class="px-4">
+            <span class="block text-primary">{{ .Params.details.shortname }}</span>
+            <a class="text-2xl text-dark font-bold uppercase" href="{{ .Permalink }}" aria-label="project image full view">{{ .Params.details.name }}</a>
+            {{ if .Params.details.description }}
+              <p class="mt-2">{{ .Params.details.description }}</p>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+  <div class="md:hidden text-center">
+    <a href="/event-services" class="btn btn-primary mb-3 hover-ripple">
+      Alle Services anzeigen
+    </a>
+  </div>
+</section>
+{{ "<!-- /mobile-events -->" | safeHTML }}
+
+
+
+{{ "<!-- entertainment -->" | safeHTML }}
+<section class="section bg-gray-white">
+  <div class="pb-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="section-title-border"></div>
+          <span class="block section-title-sm uppercase">Entertainment</span>
+          <h2>Unterhaltung für Ihr Event</h2>
+        </div>
+        <div class="col-md-4 text-right align-self-end d-md-block d-none">
+          <a href="/event-services" class="btn btn-primary mb-3 hover-ripple">
+            Alle Entertainer
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid px-0">
+    <div class="row no-gutters">
+      {{ with site.GetPage "entertainment" }}
+      {{ range first 4 .Data.Pages }}
+      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
+        <div class="project-item mb-5">
+          <div class="position-relative mb-4 overflow-hidden">
+            <img loading="lazy" src="{{.Params.details.image | absURL }}" alt="{{ .Title }}" class="img-fluid w-100 !h-[300px] object-cover">
+            <a href="{{ .Permalink }}" class="hover-overlay flex items-center justify-center text-3xl !text-white font-bold uppercase">
+              {{ .Params.gotoLabel | default "Zum Service" }}
+            </a>
+          </div>
+          <div class="px-4">
+            <span class="block text-primary">{{ .Params.details.shortname }}</span>
+            <a class="text-2xl text-dark font-bold uppercase" href="{{ .Permalink }}" aria-label="project image full view">{{ .Params.details.name }}</a>
+            {{ if .Params.details.description }}
+              <p class="mt-2">{{ .Params.details.description }}</p>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+  <div class="md:hidden text-center">
+    <a href="/event-services" class="btn btn-primary mb-3 hover-ripple">
+      Alle Entertainer anzeigen
+    </a>
+  </div>
+</section>
+{{ "<!-- /entertainment -->" | safeHTML }}
+
+{{ end }}
