@@ -18,7 +18,6 @@
 </section>
 
 
-
 {{ "<!-- EVENTLOCATIONS -->" | safeHTML }}
 <section id="eventlocations" class="section">
   <div class="container">
@@ -75,7 +74,7 @@
       {{ if .Params.faq.text }}<p>{{ .Params.faq.text | markdownify }}</p>{{ end }}
       <div class="mt-8 flex flex-col gap-6">
         {{ range $index, $entry := .Params.faq.entries }}
-          <details class="px-4 py-3 border rounded" {{ if eq $index 0 }}open{{ end }}>
+          <details class="px-4 py-3 bg-gray-50 border rounded shadow-sm" {{ if eq $index 0 }}open{{ end }}>
             <summary class="text-lg text-black font-bold">
               <span class="ml-2">{{ $entry.question }}</span>
             </summary>

@@ -16,45 +16,6 @@ hero_slider:
         label : "more details"
         link : "about/"
         animation : "zoomIn" # animation select from : https://daneden.github.io/animate.css/
-        
-    # # slider item
-    # - subtitle : "We are here to"
-    #   title : "Planning Business"
-    #   content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    #   bg_image_webp : "images/slider/banner-2.webp"
-    #   bg_image : "images/slider/banner-2.jpg"
-    #   animation : "fadeInDown" # animation select from : https://daneden.github.io/animate.css/
-    #   button:
-    #     enable : true
-    #     label : "more details"
-    #     link : "about/"
-    #     animation : "zoomIn" # animation select from : https://daneden.github.io/animate.css/
-        
-    # # slider item
-    # - subtitle : "We are here to"
-    #   title : "Planning Business"
-    #   content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    #   bg_image_webp : "images/slider/banner-3.webp"
-    #   bg_image : "images/slider/banner-3.jpg"
-    #   animation : "fadeInLeft" # animation select from : https://daneden.github.io/animate.css/
-    #   button:
-    #     enable : true
-    #     label : "more details"
-    #     link : "about/"
-    #     animation : "zoomIn" # animation select from : https://daneden.github.io/animate.css/
-        
-    # # slider item
-    # - subtitle : "We are here to"
-    #   title : "Planning Business"
-    #   content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    #   bg_image_webp : "images/slider/banner-4.webp"
-    #   bg_image : "images/slider/banner-4.jpg"
-    #   animation : "fadeInRight" # animation select from : https://daneden.github.io/animate.css/
-    #   button:
-    #     enable : true
-    #     label : "more details"
-    #     link : "about/"
-    #     animation : "zoomIn" # animation select from : https://daneden.github.io/animate.css/
 
 ################################## banner feature ############################
 banner_feature:

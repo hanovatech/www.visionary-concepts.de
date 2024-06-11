@@ -25,13 +25,13 @@
             data-animation-in="{{ .animation }}"
             data-delay-in=".1"
           >
-            <h4 class="mb-0 letter-spacing">{{ .subtitle | markdownify }}</h4>
-            <h1 class="mb-4">{{ .title | markdownify }}</h1>
-            <p class="mb-5 text-gray-800">{{ .content | markdownify }}</p>
+            <h4 class="mb-0 text-gray-200 letter-spacing">{{ .subtitle | markdownify }}</h4>
+            <h1 class="mb-4 text-white">{{ .title | markdownify }}</h1>
+            <p class="mb-5 text-gray-100">{{ .content | markdownify }}</p>
             {{ if .button.enable }}
             <a
               href="{{ .button.link | absLangURL }}"
-              class="btn btn-primary-outline"
+              class="btn btn-primary"
               data-duration-in=".3"
               data-animation-in="{{ .button.animation }}"
               data-delay-in=".4"
@@ -155,7 +155,7 @@
     </div>
   </div>
   <div class="md:hidden text-center">
-    <a href="/event-services" class="btn btn-primary mb-3 hover-ripple">
+    <a href="/eventlocations" class="btn btn-primary mb-3 hover-ripple">
       Alle Eventlocations anzeigen
     </a>
   </div>
@@ -164,7 +164,7 @@
 
 
 
-{{ "<!-- event-services -->" | safeHTML }}
+{{ "<!-- eventservices -->" | safeHTML }}
 <section class="section bg-gray-white">
   <div class="pb-4">
     <div class="container">
@@ -175,7 +175,7 @@
           <h2>Unterstützung für Ihr Event</h2>
         </div>
         <div class="col-md-4 text-right align-self-end d-md-block d-none">
-          <a href="/event-services" class="btn btn-primary mb-3 hover-ripple">
+          <a href="/eventservices" class="btn btn-primary mb-3 hover-ripple">
             Alle Services
           </a>
         </div>
@@ -184,7 +184,7 @@
   </div>
   <div class="container-fluid px-0">
     <div class="row no-gutters">
-      {{ with site.GetPage "event-services" }}
+      {{ with site.GetPage "eventservices" }}
       {{ range first 4 .Data.Pages }}
       <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
         <div class="project-item mb-5">
@@ -208,12 +208,12 @@
     </div>
   </div>
   <div class="md:hidden text-center">
-    <a href="/event-services" class="btn btn-primary mb-3 hover-ripple">
+    <a href="/eventservices" class="btn btn-primary mb-3 hover-ripple">
       Alle Services anzeigen
     </a>
   </div>
 </section>
-{{ "<!-- /event-services -->" | safeHTML }}
+{{ "<!-- /eventservices -->" | safeHTML }}
 
 
 
@@ -287,7 +287,7 @@
     </div>
   </div>
   <div class="md:hidden text-center">
-    <a href="/event-services" class="btn btn-primary mb-3 hover-ripple">
+    <a href="/eventservices" class="btn btn-primary mb-3 hover-ripple">
       Alle Services anzeigen
     </a>
   </div>
@@ -307,7 +307,7 @@
           <h2>Unterhaltung für Ihr Event</h2>
         </div>
         <div class="col-md-4 text-right align-self-end d-md-block d-none">
-          <a href="/event-services" class="btn btn-primary mb-3 hover-ripple">
+          <a href="/eventservices" class="btn btn-primary mb-3 hover-ripple">
             Alle Entertainer
           </a>
         </div>
@@ -340,7 +340,7 @@
     </div>
   </div>
   <div class="md:hidden text-center">
-    <a href="/event-services" class="btn btn-primary mb-3 hover-ripple">
+    <a href="/eventservices" class="btn btn-primary mb-3 hover-ripple">
       Alle Entertainer anzeigen
     </a>
   </div>

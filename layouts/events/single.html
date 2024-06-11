@@ -1,0 +1,196 @@
+{{ define "main" }}
+
+{{ with .Params.hero_slider }}
+{{ if .enable }}
+{{ "<!-- slider -->" | safeHTML }}
+<section>
+  <div class="hero-slider">
+    {{ range .slider_item }}
+    {{ "<!-- slider item -->" | safeHTML }}
+    <div
+      class="hero-slider-item bg-cover hero-section"
+      style="background-image: url('{{ .bg_image_webp | absURL }}');"
+    >
+      <!-- this image is for trigger this section fallback background image -->
+      <img
+        class="d-none"
+        src="{{ .bg_image_webp | absURL }}"
+        onerror="this.onerror=null;this.parentElement.style.backgroundImage='url({{ .bg_image | absURL }})'"
+      />
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-lg-6"
+            data-duration-in=".3"
+            data-animation-in="{{ .animation }}"
+            data-delay-in=".1"
+          >
+            <h4 class="mb-0 text-gray-200 letter-spacing">{{ .subtitle | markdownify }}</h4>
+            <h1 class="mb-4 text-white">{{ .title | markdownify }}</h1>
+            <p class="mb-5 text-gray-100">{{ .content | markdownify }}</p>
+            {{ if .button.enable }}
+            <a
+              href="{{ .button.link | absLangURL }}"
+              class="btn btn-primary"
+              data-duration-in=".3"
+              data-animation-in="{{ .button.animation }}"
+              data-delay-in=".4"
+            >
+              {{ .button.label }}
+            </a>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ "<!-- /slider -->" | safeHTML }}
+{{ end }}
+{{ end }}
+
+
+{{ with .Params.feature }}
+{{ if .enable }}
+{{ "<!-- feature -->" | safeHTML }}
+<section class="section">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col-lg-4 offset-lg-2 order-lg-1 order-2">
+        <div class="section-title-border"></div>
+        <h4 class="section-title-sm">{{ .subtitle | markdownify }}</h4>
+        <h2 class="section-title">{{ .title | markdownify }}</h2>
+        <p class="mb-5">{{ .content | markdownify }}</p>
+        <ul class="list-unstyled">
+          {{ range .feature_item }}
+          {{ "<!-- feature item -->" | safeHTML }}
+          <li class="d-flex align-items-center mb-5">
+            <div class="text-center mr-4">
+              <div class="icon-bg water-wave"><i class="{{ .icon }} icon text-primary"></i></div>
+            </div>
+            <div>
+              <h4>{{ .name | markdownify }}</h4>
+              {{ .content | markdownify }}
+            </div>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="col-lg-5 pr-lg-0 order-lg-2 order-1 mb-5 mb-lg-0">
+        <div class="feature-img-bg box-shadow">
+          <img loading="lazy" class="img-fluid w-100 rounded-md" src="{{ .image_webp | absURL }}"
+            onerror="this.src='{{ .image | absURL }}'" alt="feature-image">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ "<!-- /feature -->" | safeHTML }}
+{{ end }}
+
+
+{{ "<!-- eventlocations -->" | safeHTML }}
+<section class="section pt-0">
+  <div class="pb-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="section-title-border"></div>
+          <span class="block section-title-sm uppercase">Eventlocations in Hannover</span>
+          <h2>{{ .Params.eventlocations.heading }}</h2>
+        </div>
+        <div class="col-md-4 text-right align-self-end d-md-block d-none">
+          <a href="/eventlocations" class="btn btn-primary mb-3 hover-ripple">
+            Alle Locations
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid px-0">
+    <div class="row no-gutters">
+      {{ with site.GetPage "eventlocations" }}
+      {{ $thisCategories := $.Params.details.categories }}
+      {{ range first 4 (where .Data.Pages "Params.details.categories" "intersect" $thisCategories) }}
+      {{ "<!-- project-item -->" | safeHTML }}
+      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
+        <div class="project-item mb-5">
+          <div class="position-relative mb-4 overflow-hidden">
+            <img loading="lazy" src="{{.Params.details.image | absURL }}" alt="{{ .Title }}" class="img-fluid w-100 !h-[300px] object-cover">
+            <a href="{{ .Permalink }}" class="hover-overlay flex items-center justify-center text-3xl !text-white font-bold uppercase">
+              Zur Location
+            </a>
+          </div>
+          <div class="px-4">
+            <span class="block text-primary">{{ .Params.details.city }}</span>
+            <a class="text-2xl text-dark font-bold uppercase" href="{{ .Permalink }}" aria-label="project image full view">{{ .Params.details.name }}</a>
+            {{ if .Params.details.description }}
+              <p class="mt-2">{{ .Params.details.description }}</p>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+  <div class="md:hidden text-center">
+    <a href="/eventlocations" class="btn btn-primary mb-3 hover-ripple">
+      Alle Eventlocations anzeigen
+    </a>
+  </div>
+</section>
+{{ "<!-- /eventlocations -->" | safeHTML }}
+
+
+
+{{ "<!-- faq -->" | safeHTML }}
+<section class="section pt-0">
+  <div class="container">
+      <span class="block mb-2 text-xl text-primary font-bold uppercase">{{ if .Params.faq.title }}{{ .Params.faq.title }}{{ else }}FAQ{{ end }}</span>
+      <h2>{{ .Params.faq.heading }}</h2>
+      {{ if .Params.faq.text }}<p>{{ .Params.faq.text | markdownify }}</p>{{ end }}
+      <div class="mt-8 flex flex-col gap-6">
+        {{ range $index, $entry := .Params.faq.entries }}
+          <details class="px-4 py-3 bg-gray-50 border rounded shadow-sm" {{ if eq $index 0 }}open{{ end }}>
+            <summary class="text-lg text-black font-bold">
+              <span class="ml-2">{{ $entry.question }}</span>
+            </summary>
+            <p class="mt-3 mb-0">{{ $entry.answer | markdownify }}</p>
+          </details>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ "<!-- faq -->" | safeHTML }}
+
+
+{{ with .Params.cta }} 
+{{ "<!-- call-to-action -->" | safeHTML }}
+<section
+  class="section overlay-secondary bg-fixed"
+  style="background-image: url('{{ .bg_image_webp | absURL }}');"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-11 text-center mx-auto">
+        <h2 class="section-title text-white">{{ .title | markdownify }}</h2>
+        {{ if .button.enable }}
+        {{ with .button }}
+        <a href="{{ .link | absLangURL }}" class="btn btn-primary hover-ripple">
+          {{ .label }}
+        </a>
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ "<!-- /call-to-action -->" | safeHTML }}
+{{ end }}
+
+
+{{ end }}

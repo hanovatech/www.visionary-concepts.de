@@ -7,10 +7,10 @@ weight: 4
 heading: "NATE Hannover"
 subheading: "Eventlocation in Hannover"
 breadcrumb: "Eventlocations"
-bg_image: "https://scontent-muc2-1.xx.fbcdn.net/v/t39.30808-6/431546798_740158738250949_7740509530141513578_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=dH-m5oqcPhEQ7kNvgH3gbvC&_nc_ht=scontent-muc2-1.xx&oh=00_AYDrRTF5SpGX7lntsRl8cyZIa3XmUayru3ktHVYhs1iddw&oe=665F71CF"
+bg_image: "https://scontent-muc2-1.xx.fbcdn.net/v/t39.30808-6/431546798_740158738250949_7740509530141513578_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=gY86uwlGBTAQ7kNvgG17Tjt&_nc_ht=scontent-muc2-1.xx&oh=00_AYBaRxuTO9lJ1gYl-SVm8jckGkk3XZn__UXtGd0r4WH1Hw&oe=666DF24F"
 
 details:
-  image: "https://scontent-muc2-1.xx.fbcdn.net/v/t39.30808-6/431546798_740158738250949_7740509530141513578_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=dH-m5oqcPhEQ7kNvgH3gbvC&_nc_ht=scontent-muc2-1.xx&oh=00_AYDrRTF5SpGX7lntsRl8cyZIa3XmUayru3ktHVYhs1iddw&oe=665F71CF"
+  image: "https://scontent-muc2-1.xx.fbcdn.net/v/t39.30808-6/431546798_740158738250949_7740509530141513578_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=gY86uwlGBTAQ7kNvgG17Tjt&_nc_ht=scontent-muc2-1.xx&oh=00_AYBaRxuTO9lJ1gYl-SVm8jckGkk3XZn__UXtGd0r4WH1Hw&oe=666DF24F"
   name: NATE Hannover
   street: An der Graft 3
   city: Hannover Mitte
