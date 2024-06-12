@@ -4,8 +4,18 @@
 hero_slider:
   enable : true
   slider_item:
-    # slider item
     - subtitle : "Eventplanung"
+      title : "Wir machen aus Ihrer Veranstaltung einen vollen Erfolg"
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      bg_image_webp : "images/slider/banner-1.jpg"
+      bg_image : "images/slider/banner-1.jpg"
+      animation : "fadeInUp" # animation select from : https://daneden.github.io/animate.css/
+      button:
+        enable : true
+        label : "more details"
+        link : "about/"
+        animation : "zoomIn" # animation select from : https://daneden.github.io/animate.css/
+    - subtitle : "Eventlocations"
       title : "Locations für Ihre Veranstaltung"
       content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       bg_image_webp : "images/slider/banner-1.jpg"
@@ -82,27 +92,7 @@ funfacts :
       count : "500"
       icon : "far fa-smile" # font-awesome 5 : https://fontawesome.com/icons/
 
-
-################################# feature ############################################
-feature:
-  enable : true
-  subtitle : "Why Choose Us"
-  title : "Why They Choose Bexar"
-  image_webp : "images/feature/feature.webp"
-  image : "images/feature/feature.jpg"
-  content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius tempor incididunt ut labore."
-  feature_item:
-    # feature item loop
-    - name : "Creative Design"
-      icon : "far fa-snowflake" # font-awesome 5 : https://fontawesome.com/icons/
-      content : "Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia."
-      
-    # feature item loop
-    - name : "Pixel Perfect Coding"
-      icon : "fas fa-code" # font-awesome 5 : https://fontawesome.com/icons/
-      content : "Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia."
-
-################################# blog ################################################
+################################# cta ################################################
 cta:
   enable : true
   title : "Unterstützung gefällig?<br>Wir helfen Ihnen gerne weiter!"
@@ -113,11 +103,27 @@ cta:
     label : "Jetzt anrufen"
     link : "contact/"
 
-################################# blog ################################################
-blog:
+########################### steps ############################
+steps:
   enable : true
-  section : "blog"
-  show_item : 3
-  # blog post comes from "content/*/blog" folder
+  steps_items:
+    - title : "Wichtigsten Eckdaten festlegen"
+      content : "Stellen Sie uns eine Anfrage mit Ihren Wünschen und allen relevanten Eckdaten zu Ihrer Veranstaltung."
+      bullet_point:
+        - "Veranstaltungsdatum"
+        - "Anzahl Gäste"
+        - "Budget"
+    - title : "Ihre Wünsche definieren"
+      content : "Haben Sie schon eine genaue Vorstellung für Ihre Veranstaltung? Dann teilen Sie uns Ihre Vorstellungen und Wünsche direkt mit!"
+      bullet_point:
+        - "Atmosphäre und Stil"
+        - "Catering und Getränke"
+        - "Ausstattung und Technik"
+    - title : "Ihre Veranstaltung gestalten"
+      content : "Auf Basis Ihrer Vorstellungen und Wünsche stellen wir Ihnen eine Auswahl potenzieller Eventlocations zusammen und helfen Ihnen bei der Auswahl."
+      bullet_point:
+        - "Individuell und passend"
+        - "Aus unserem Portfolio"
+        - "In Hannover und Umgebung"
 
 ---

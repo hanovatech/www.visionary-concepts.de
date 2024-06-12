@@ -32,8 +32,8 @@ preloader = "" # use jpg, png, svg or gif format.
 # Navigation button
 [navigation_button]
 enable = true
-label = "Kontakt"
-link = "contact/"
+label = "Jetzt anfragen"
+link = "/anfragen"
 
 # Subscription
 [subscription]

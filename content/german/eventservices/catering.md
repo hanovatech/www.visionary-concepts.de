@@ -12,8 +12,9 @@ gotoLabel: "Zum Catering"
 
 details:
   image: "https://as2.ftcdn.net/v2/jpg/00/83/76/59/1000_F_83765933_u8NNVjbXk4NzpWCalthFN09Ip3qRbY4M.jpg"
-  name: Speisen & Getränke 
-  shortname: Catering
+  name: Catering
+  shortname: Speisen & Getränke
+  icon: fas fa-utensils
 ---
 
 ## Die Eventlocation für eine Feier im Grünen

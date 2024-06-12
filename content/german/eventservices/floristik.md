@@ -12,8 +12,9 @@ gotoLabel: "Zur Floristik"
 
 details:
   image: "https://as1.ftcdn.net/v2/jpg/04/31/21/48/1000_F_431214830_hNQhiMEmoFURN2FQKytbcz80uUgmcvs9.jpg"
-  name: Blumen & Dekoration
-  shortname: Floristik
+  name: Floristik
+  shortname: Blumen & Dekoration
+  icon: fab fa-pagelines
 ---
 
 ## Die Eventlocation für eine Feier im Grünen

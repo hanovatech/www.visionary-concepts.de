@@ -36,9 +36,12 @@
                   {{ .Params.details.zip }} {{ .Params.details.city }}
                 </span>
               </div>
-              <a class="text-primary font-bold" href="https://maps.google.com/maps/dir//{{ .Params.details.name }}, {{ .Params.details.city }}" target="_blank">
-                Anfahrt<i class="ml-2 mb-0 fas fa-external-link-alt"></i>
-              </a>
+              <div class="mb-0 flex flex-row gap-4 items-center text-lg">
+                <i class="fas fa-car"></i>
+                <a class="text-primary font-bold" href="https://maps.google.com/maps/dir//{{ .Params.details.name }}, {{ .Params.details.city }}" target="_blank">
+                  Anfahrt<i class="ml-2 mb-0 fas fa-external-link-alt"></i>
+                </a>
+              </div>
             </div>
             <iframe
               style="border:0; border-radius: 16px; width: 100%;"

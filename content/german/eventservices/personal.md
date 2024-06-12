@@ -12,8 +12,9 @@ gotoLabel: "Zum Catering"
 
 details:
   image: "https://as2.ftcdn.net/v2/jpg/06/39/42/19/1000_F_639421903_eiGi58eETvn8SVGOfa4eryZVCS7BjG3p.jpg"
-  name: Personal & Service 
-  shortname: Personal
+  name: Personal
+  shortname: Personal & Service 
+  icon: fas fa-concierge-bell
 ---
 
 ## Die Eventlocation für eine Feier im Grünen

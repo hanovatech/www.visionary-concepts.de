@@ -4,7 +4,7 @@ description: "this is meta description"
 date: 2019-02-07T10:47:55+06:00
 weight: 1
 
-heading: "Georgen Terrassen"
+heading: "Georgen Terrassen: Eventlocation in Hannover"
 subheading: "Eventlocation in Hannover"
 breadcrumb: "Eventlocations"
 bg_image: "https://handgroup.b-cdn.net/locations/georgen-terrassen/display3.jpg"

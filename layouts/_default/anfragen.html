@@ -1,0 +1,211 @@
+{{ define "main" }}
+
+<section class="section">
+  <div class="container !max-w-4xl">
+    <form action="/anfragen/success">
+      <div class="p-6 lg:p-8 bg-gray-100 shadow">
+
+
+        <div id="step1" class="step flex flex-col gap-8" style="display: flex">
+          <div>
+            <h2 class="text-4xl font-bold mb-2">Fangen wir mit den Eckdaten an</h2>
+            <p class="mb-0 text-xl font-light">Geben Sie uns ein paar Infos zum Rahmen Ihrer Veranstaltung mit</p>
+          </div>
+
+          <hr class="-my-2" />
+          <div class="flex flex-col lg:flex-row gap-2 justify-between">
+            <label for="event-type" class="text-lg font-semibold text-gray-800">
+              Art der Veranstaltung
+              <span class="block text-sm font-normal text-gray-500">Um welche Art von Veranstaltung geht es?</span>
+            </label>
+            <select name="event-type" id="event-type" class="min-w-56">
+              <option>Bitte wählen...</option>
+              {{ range where $.Site.RegularPages "Section" "events" }}
+                <option value="{{ .Params.details.name }}">{{ .Params.details.name }}</option>
+              {{ end }}
+              <option value="Sonstiges">Sonstiges</option>
+            </select>
+          </div>
+          <div class="flex flex-col lg:flex-row gap-2 justify-between">
+            <label for="event-type" class="text-lg font-semibold text-gray-800">
+              Anzahl Gäste
+              <span class="block text-sm font-normal text-gray-500">Mit wie vielen Gästen planen Sie in etwa?</span>
+            </label>
+            <select name="guests" id="guests" class="min-w-56">
+              <option>Bitte wählen...</option>
+              <option value="unter20">unter 20</option>
+              <option value="bis50">bis 50</option>
+              <option value="bis 100">bis 100</option>
+              <option value="bis 200">bis 200</option>
+              <option value="bis 500">bis 500</option>
+              <option value="500+">mehr als 500</option>
+            </select>
+          </div>
+          <div class="flex flex-col lg:flex-row gap-2 justify-between">
+            <label for="event-type" class="text-lg font-semibold text-gray-800">
+              Budgetvorstellung
+              <span class="block text-sm font-normal text-gray-500">Mit welchem Budget planen Sie?</span>
+            </label>
+            <select name="budget" id="budget" class="min-w-56">
+              <option>Bitte wählen...</option>
+              <option value="unter20">bis 2.000€</option>
+              <option value="bis50">bis 5.000€</option>
+              <option value="bis 100">bis 10.000€</option>
+              <option value="bis 200">bis 20.000€</option>
+              <option value="bis 500">bis 50.000€</option>
+              <option value="500+">über 50.000€</option>
+            </select>
+          </div>
+          <div class="flex flex-col lg:flex-row gap-2 justify-between">
+            <label for="event-date" class="text-lg font-semibold text-gray-800">
+              Datum der Veranstaltung
+              <span class="block text-sm font-normal text-gray-500">Wann möchten Sie am liebsten feiern?</span>
+            </label>
+            <input type="date" name="event-date" id="event-date" />
+          </div>
+        </div>
+
+
+        <div id="step2" class="step flex flex-col gap-8" style="display: none">
+          <div>
+            <h2 class="text-4xl font-bold mb-2">Benötigen Sie noch eine Location?</h2>
+            <p class="mb-0 text-xl font-light">Für das richtige Ambiente haben wir verschiedenste Eventlocations parat</p>
+          </div>
+          <hr class="-my-2" />
+          <div id="eventlocations" class="grid lg:grid-cols-2 gap-y-4 gap-x-6">
+            {{ range where $.Site.RegularPages "Section" "eventlocations" }}
+              <label for="{{ .Params.details.name }}" class="m-0 p-4 bg-white rounded-md flex flex-row gap-6 items-center cursor-pointer group">
+                <div class="grow">
+                  <span class="block text-xl text-gray-800 font-semibold group-hover:hover:text-[#86c33a]">{{ .Params.details.name }}</span>
+                  <span class="block text-sm text-gray-500 font-light">
+                    {{ range $index, $location := .Params.details.categories }}
+                      {{ if $index}}·{{ end }} {{ $location }}
+                    {{ end }}
+                  </span>
+                  <a href="{{ .Permalink }}" target="_blank" class="text-sm text-[#86c33a]">
+                    Mehr Infos
+                    <i class="ml-1 fas fa-external-link-alt text-xs"></i>
+                  </a>
+                </div>
+                <input type="checkbox" name="services[]" id="{{ .Params.details.name }}" value="{{ .Params.details.name }}" />
+              </label>
+            {{ end }}
+          </div>
+          <div class="mx-auto -mt-2">
+            <a href="/eventlocations" target="_blank" class="text-sm">
+              Hier geht es zur Übersicht unserer Eventlocations
+              <i class="ml-1 fas fa-external-link-alt text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+
+        <div id="step3" class="step flex flex-col gap-8" style="display: none">
+          <div>
+            <h2 class="text-4xl font-bold mb-2">Wobei können wir Ihnen noch helfen?</h2>
+            <p class="mb-0 text-xl font-light">Wir helfen Ihnen bei allen Themen rund um Ihre Veranstaltung</p>
+          </div>
+          <hr class="-my-2" />
+          <div class="grid lg:grid-cols-2 gap-y-4 gap-x-6">
+            {{ range where $.Site.RegularPages "Section" "eventservices" }}
+            <label for="{{ .Params.details.name }}" class="m-0 p-4 bg-white rounded-md flex flex-row gap-6 items-center cursor-pointer group">
+              <div class="grow">
+                <span class="block text-xl text-gray-800 font-semibold group-hover:hover:text-[#86c33a]">
+                  <i class="mr-1 {{ .Params.details.icon }}"></i>
+                  {{ .Params.details.name }}
+                </span>
+                <span class="block text-sm text-gray-500 font-light">{{ .Params.details.shortname}}</span>
+                <a href="{{ .Permalink }}" target="_blank" class="text-sm text-[#86c33a]">
+                  Mehr Infos
+                  <i class="ml-1 fas fa-external-link-alt text-xs"></i>
+                </a>
+              </div>
+              <input type="checkbox" name="services[]" id="{{ .Params.details.name }}" value="{{ .Params.details.name }}" />
+            </label>
+            {{ end }}
+          </div>
+          <div class="mx-auto -mt-2">
+            <a href="/eventservices" target="_blank" class="text-sm">
+              Hier geht es zur Übersicht unserer Services
+              <i class="ml-1 fas fa-external-link-alt text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+
+        <div id="step4" class="step flex flex-col gap-8" style="display: none">
+          <div>
+            <h2 class="text-4xl font-bold mb-2">Damit wir Sie erreichen können</h2>
+            <p class="mb-0 text-xl font-light">Geben Sie uns Ihre Kontaktdaten mit</p>
+          </div>
+          <hr class="-my-2" />
+          <div class="grid lg:grid-cols-2 gap-6">
+            <div>
+              <label for="Vorname" class="block text-lg font-semibold text-gray-800">Vorname</label>
+              <input type="text" name="Vorname" id="Vorname" autocomplete="given-name" class="w-full" />
+            </div>
+            <div>
+              <label for="Nachname" class="block text-lg font-semibold text-gray-800">Nachname</label>
+              <input type="text" name="Nachname" id="Nachname" autocomplete="family-name" class="w-full" />
+            </div>
+            <div class="lg:col-span-2">
+              <label for="Unternehmen" class="block text-lg font-semibold text-gray-800">Ggf. Unternehmen</label>
+              <input type="text" name="Unternehmen" id="Unternehmen" class="w-full" />
+            </div>
+            <div>
+              <label for="Email" class="block text-lg font-semibold text-gray-800">Email</label>
+              <input type="text" name="Email" id="Email" autocomplete="email" class="w-full" />
+            </div>
+            <div>
+              <label for="Telefon" class="block text-lg font-semibold text-gray-800">Telefon</label>
+              <input type="text" name="Telefon" id="Telefon" autocomplete="tel" class="w-full" />
+            </div>
+            <div class="lg:col-span-2">
+              <label for="Nachricht" class="block text-lg font-semibold text-gray-800">Ihre Nachricht an uns</label>
+              <textarea type="text" name="Nachricht" id="Nachricht" class="w-full" rows="6"></textarea>
+            </div>
+          </div>
+        </div>
+
+
+        <hr class="my-6" />
+        <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+          <span class="grow font-semibold uppercase">Schritt <span id="current-step">1</span> von <span id="last-step">4</span></span>
+          <button type="button" id="prev" class="btn btn-primary-outline lg:py-2" style="display: none" onclick="nextStep(-1)">Zurück</button>
+          <button type="button" id="next" class="btn btn-primary lg:py-2" style="display: block" onclick="nextStep(1)">Weiter</button>
+          <button type="submit" id="submit" class="btn btn-primary lg:py-2" style="display: none">Absenden</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  function nextStep(step) {
+    const currentStep = Number(document.getElementById('current-step').innerHTML);
+    const currentStepView = document.getElementById('step' + currentStep)
+    const nextStepView = document.getElementById('step' + (currentStep + step))
+
+    if (currentStepView && nextStepView) {
+      currentStepView.style.display = 'none';
+      nextStepView.style.display = 'flex';
+      document.getElementById('current-step').innerHTML = currentStep + step;
+
+      if (currentStep + step === 1) {
+        document.getElementById('prev').style.display = 'none';
+      } else {
+        document.getElementById('prev').style.display = 'block';
+      }
+
+      if (currentStep + step === Number(document.getElementById('last-step').innerHTML)) {
+        document.getElementById('next').style.display = 'none';
+        document.getElementById('submit').style.display = 'block';
+      } else {
+        document.getElementById('next').style.display = 'block';
+        document.getElementById('submit').style.display = 'none';
+      }
+    }
+  }
+</script>
+
+{{ end }}

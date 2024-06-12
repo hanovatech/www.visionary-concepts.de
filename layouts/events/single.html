@@ -20,13 +20,13 @@
       <div class="container">
         <div class="row">
           <div
-            class="col-lg-6"
+            class="col-lg-8"
             data-duration-in=".3"
             data-animation-in="{{ .animation }}"
             data-delay-in=".1"
           >
             <h4 class="mb-0 text-gray-200 letter-spacing">{{ .subtitle | markdownify }}</h4>
-            <h1 class="mb-4 text-white">{{ .title | markdownify }}</h1>
+            <h1 class="mb-4 text-5xl lg:text-7xl text-white">{{ .title | markdownify }}</h1>
             <p class="mb-5 text-gray-100">{{ .content | markdownify }}</p>
             {{ if .button.enable }}
             <a
@@ -57,7 +57,7 @@
 <section class="section">
   <div class="container-fluid">
     <div class="row align-items-center">
-      <div class="col-lg-4 offset-lg-2 order-lg-1 order-2">
+      <div class="col-lg-4 offset-lg-1 order-lg-1 order-2">
         <div class="section-title-border"></div>
         <h4 class="section-title-sm">{{ .subtitle | markdownify }}</h4>
         <h2 class="section-title">{{ .title | markdownify }}</h2>
@@ -91,8 +91,33 @@
 {{ end }}
 
 
+{{ with .Params.cta }} 
+{{ "<!-- call-to-action -->" | safeHTML }}
+<section
+  class="section overlay-secondary bg-fixed"
+  style="background-image: url('{{ .bg_image_webp | absURL }}');"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-11 text-center mx-auto">
+        <h2 class="section-title text-white">{{ .title | markdownify }}</h2>
+        {{ if .button.enable }}
+        {{ with .button }}
+        <a href="{{ .link | absLangURL }}" class="btn btn-primary hover-ripple">
+          {{ .label }}
+        </a>
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ "<!-- /call-to-action -->" | safeHTML }}
+{{ end }}
+
+
 {{ "<!-- eventlocations -->" | safeHTML }}
-<section class="section pt-0">
+<section class="section">
   <div class="pb-4">
     <div class="container">
       <div class="row">
@@ -100,9 +125,10 @@
           <div class="section-title-border"></div>
           <span class="block section-title-sm uppercase">Eventlocations in Hannover</span>
           <h2>{{ .Params.eventlocations.heading }}</h2>
+          <p>{{ .Params.eventlocations.text }}</p>
         </div>
         <div class="col-md-4 text-right align-self-end d-md-block d-none">
-          <a href="/eventlocations" class="btn btn-primary mb-3 hover-ripple">
+          <a href="/eventlocations" class="btn btn-primary-outline mb-3 hover-ripple">
             Alle Locations
           </a>
         </div>
@@ -168,28 +194,37 @@
 {{ "<!-- faq -->" | safeHTML }}
 
 
-{{ with .Params.cta }} 
-{{ "<!-- call-to-action -->" | safeHTML }}
-<section
-  class="section overlay-secondary bg-fixed"
-  style="background-image: url('{{ .bg_image_webp | absURL }}');"
->
-  <div class="container">
+
+{{ if .Params.steps.enable }}
+{{ with .Params.steps }}
+{{ "<!-- steps -->" | safeHTML }}
+<section class="section bg-gray position-relative">
+  <div class="container position-relative zindex-1">
     <div class="row">
-      <div class="col-md-10 col-11 text-center mx-auto">
-        <h2 class="section-title text-white">{{ .title | markdownify }}</h2>
-        {{ if .button.enable }}
-        {{ with .button }}
-        <a href="{{ .link | absLangURL }}" class="btn btn-primary hover-ripple">
-          {{ .label }}
-        </a>
-        {{ end }}
-        {{ end }}
+      {{ $.Scratch.Set "counter" 0 }}
+      {{ range $index, $element := .steps_items }}
+      {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h3><span class="text-primary block">{{if lt $index 9}}0{{end}}{{$.Scratch.Get `counter`}}.</span> {{ .title }}</h3>
+        <p>{{ .content | markdownify }}</p>
+        <ul class="list-styled style-circle">
+          {{ range .bullet_point }}
+          <li class="mb-3">{{ . | markdownify }}</li>
+          {{ end }}
+        </ul>
       </div>
+      {{ end }}
+    </div>
+    <div class="mt-6 text-center">
+      <a href="{{ site.Params.navigation_button.link | absLangURL }}" class="btn btn-primary hover-ripple">Jetzt anfragen</a>
     </div>
   </div>
+  <!-- background shapes -->
+  <img loading="lazy" class="img-fluid philosophy-bg-shape" src="{{ `images/backgrounds/about-page-bg.webp` | relURL }}" onerror="this.onerror=null;this.src='{{ `images/backgrounds/about-page-bg.png` | relURL }}'" alt="shape">
+  <img loading="lazy" class="img-fluid about-bg-shape" src="{{ `images/backgrounds/about-us-3-bg.webp` | relURL }}" onerror="this.onerror=null;this.src='{{ `images/backgrounds/about-us-3-bg.png` | relURL }}'" alt="shape">
 </section>
-{{ "<!-- /call-to-action -->" | safeHTML }}
+{{ "<!-- /steps -->" | safeHTML }}
+{{ end }}
 {{ end }}
 
 

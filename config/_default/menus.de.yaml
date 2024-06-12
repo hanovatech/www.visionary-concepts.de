@@ -35,25 +35,9 @@ main:
     weight: 3
     params:
       section: "eventlocations"
-      sectionNameKey: "details.name"
   - name: "Eventservices"
-    url: "/event-services"
-    hasChildren: true
+    url: "/eventservices"
     weight: 4
-  - name: "Catering"
-    url: "/services/catering"
-    parent: "Eventservices"
-    weight: 1
-  - name: "Personal"
-    url: "/services/personal"
-    parent: "Eventservices"
-    weight: 2
-  - name: "Technik"
-    url: "/services/technik"
-    parent: "Eventservices"
-    weight: 3
-  - name: "Floristik"
-    url: "/services/floristik"
-    parent: "Eventservices"
-    weight: 4
+    params:
+      section: "eventservices"
 

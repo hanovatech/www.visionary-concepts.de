@@ -48,6 +48,7 @@
               </a>
               <div class="dropdown-menu" >
                 {{ if isset .Params "section" }}
+                  <a class="dropdown-item" href="/{{ .Params.section }}">Übersicht</a>
                   {{ range where $.Site.RegularPages "Section" .Params.section }}
                     <a class="dropdown-item" href="{{ .RelPermalink | relLangURL }}">{{ .Params.details.name }}</a>
                   {{ end }}

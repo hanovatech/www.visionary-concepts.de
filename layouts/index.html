@@ -20,7 +20,7 @@
       <div class="container">
         <div class="row">
           <div
-            class="col-lg-6"
+            class="col-lg-8"
             data-duration-in=".3"
             data-animation-in="{{ .animation }}"
             data-delay-in=".1"
@@ -346,5 +346,39 @@
   </div>
 </section>
 {{ "<!-- /entertainment -->" | safeHTML }}
+
+
+
+{{ if .Params.steps.enable }}
+{{ with .Params.steps }}
+{{ "<!-- steps -->" | safeHTML }}
+<section class="section bg-gray position-relative">
+  <div class="container position-relative zindex-1">
+    <div class="row">
+      {{ $.Scratch.Set "counter" 0 }}
+      {{ range $index, $element := .steps_items }}
+      {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h3><span class="text-primary block">{{if lt $index 9}}0{{end}}{{$.Scratch.Get `counter`}}.</span> {{ .title }}</h3>
+        <p>{{ .content | markdownify }}</p>
+        <ul class="list-styled style-circle">
+          {{ range .bullet_point }}
+          <li class="mb-3">{{ . | markdownify }}</li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </div>
+    <div class="mt-6 text-center">
+      <a href="{{ site.Params.navigation_button.link | absLangURL }}" class="btn btn-primary hover-ripple">Jetzt anfragen</a>
+    </div>
+  </div>
+  <!-- background shapes -->
+  <img loading="lazy" class="img-fluid philosophy-bg-shape" src="{{ `images/backgrounds/about-page-bg.webp` | relURL }}" onerror="this.onerror=null;this.src='{{ `images/backgrounds/about-page-bg.png` | relURL }}'" alt="shape">
+  <img loading="lazy" class="img-fluid about-bg-shape" src="{{ `images/backgrounds/about-us-3-bg.webp` | relURL }}" onerror="this.onerror=null;this.src='{{ `images/backgrounds/about-us-3-bg.png` | relURL }}'" alt="shape">
+</section>
+{{ "<!-- /steps -->" | safeHTML }}
+{{ end }}
+{{ end }}
 
 {{ end }}

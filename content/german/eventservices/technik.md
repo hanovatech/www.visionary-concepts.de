@@ -12,8 +12,9 @@ gotoLabel: "Zur Technik"
 
 details:
   image: "https://as1.ftcdn.net/v2/jpg/04/33/86/34/1000_F_433863441_m6oaaD05QAhsdCDjbeV6rne3mI1mVx48.jpg"
-  name: Technik & Ausstattung 
-  shortname: Eventtechnik
+  name: Eventtechnik
+  shortname: Technik & Ausstattung 
+  icon: far fa-lightbulb
 ---
 
 ## Die Eventlocation für eine Feier im Grünen
