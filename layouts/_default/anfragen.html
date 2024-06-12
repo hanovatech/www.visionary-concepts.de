@@ -14,11 +14,11 @@
 
           <hr class="-my-2" />
           <div class="flex flex-col lg:flex-row gap-2 justify-between">
-            <label for="event-type" class="text-lg font-semibold text-gray-800">
+            <label for="Veranstaltungsart" class="text-lg font-semibold text-gray-800">
               Art der Veranstaltung
               <span class="block text-sm font-normal text-gray-500">Um welche Art von Veranstaltung geht es?</span>
             </label>
-            <select name="event-type" id="event-type" class="min-w-56">
+            <select name="Veranstaltungsart" id="Veranstaltungsart" class="min-w-56">
               <option>Bitte wählen...</option>
               {{ range where $.Site.RegularPages "Section" "events" }}
                 <option value="{{ .Params.details.name }}">{{ .Params.details.name }}</option>
@@ -27,26 +27,26 @@
             </select>
           </div>
           <div class="flex flex-col lg:flex-row gap-2 justify-between">
-            <label for="event-type" class="text-lg font-semibold text-gray-800">
+            <label for="Anzahl Gäste" class="text-lg font-semibold text-gray-800">
               Anzahl Gäste
               <span class="block text-sm font-normal text-gray-500">Mit wie vielen Gästen planen Sie in etwa?</span>
             </label>
-            <select name="guests" id="guests" class="min-w-56">
+            <select name="Anzahl Gäste" id="Anzahl Gäste" class="min-w-56">
               <option>Bitte wählen...</option>
-              <option value="unter20">unter 20</option>
-              <option value="bis50">bis 50</option>
-              <option value="bis 100">bis 100</option>
-              <option value="bis 200">bis 200</option>
-              <option value="bis 500">bis 500</option>
-              <option value="500+">mehr als 500</option>
+              <option value="unter 20 Personen">unter 20 Personen</option>
+              <option value="bis 50 Personen">bis 50 Personen</option>
+              <option value="bis 100 Personen">bis 100 Personen</option>
+              <option value="bis 200 Personen">bis 200 Personen</option>
+              <option value="bis 500 Personen">bis 500 Personen</option>
+              <option value="500+ Personen">mehr als 500 Personen</option>
             </select>
           </div>
           <div class="flex flex-col lg:flex-row gap-2 justify-between">
-            <label for="event-type" class="text-lg font-semibold text-gray-800">
+            <label for="Budget" class="text-lg font-semibold text-gray-800">
               Budgetvorstellung
               <span class="block text-sm font-normal text-gray-500">Mit welchem Budget planen Sie?</span>
             </label>
-            <select name="budget" id="budget" class="min-w-56">
+            <select name="Budget" id="Budget" class="min-w-56">
               <option>Bitte wählen...</option>
               <option value="unter20">bis 2.000€</option>
               <option value="bis50">bis 5.000€</option>
@@ -57,11 +57,11 @@
             </select>
           </div>
           <div class="flex flex-col lg:flex-row gap-2 justify-between">
-            <label for="event-date" class="text-lg font-semibold text-gray-800">
+            <label for="Datum" class="text-lg font-semibold text-gray-800">
               Datum der Veranstaltung
               <span class="block text-sm font-normal text-gray-500">Wann möchten Sie am liebsten feiern?</span>
             </label>
-            <input type="date" name="event-date" id="event-date" />
+            <input type="date" name="Datum" id="Datum" />
           </div>
         </div>
 
@@ -87,7 +87,7 @@
                     <i class="ml-1 fas fa-external-link-alt text-xs"></i>
                   </a>
                 </div>
-                <input type="checkbox" name="services[]" id="{{ .Params.details.name }}" value="{{ .Params.details.name }}" />
+                <input type="checkbox" name="Eventlocations[]" id="{{ .Params.details.name }}" value="{{ .Params.details.name }}" />
               </label>
             {{ end }}
           </div>
@@ -120,7 +120,7 @@
                   <i class="ml-1 fas fa-external-link-alt text-xs"></i>
                 </a>
               </div>
-              <input type="checkbox" name="services[]" id="{{ .Params.details.name }}" value="{{ .Params.details.name }}" />
+              <input type="checkbox" name="Dienstleistungen[]" id="{{ .Params.details.name }}" value="{{ .Params.details.name }}" />
             </label>
             {{ end }}
           </div>
