@@ -107,7 +107,7 @@ cta:
 steps:
   enable : true
   steps_items:
-    - title : "Wichtigsten Eckdaten festlegen"
+    - title : "Die wichtigsten Eckdaten festlegen"
       content : "Stellen Sie uns eine Anfrage mit Ihren Wünschen und allen relevanten Eckdaten zu Ihrer Veranstaltung."
       bullet_point:
         - "Veranstaltungsdatum"
@@ -119,7 +119,7 @@ steps:
         - "Atmosphäre und Stil"
         - "Catering und Getränke"
         - "Ausstattung und Technik"
-    - title : "Ihre Veranstaltung gestalten"
+    - title : "Die Veranstaltung gestalten"
       content : "Auf Basis Ihrer Vorstellungen und Wünsche stellen wir Ihnen eine Auswahl potenzieller Eventlocations zusammen und helfen Ihnen bei der Auswahl."
       bullet_point:
         - "Individuell und passend"

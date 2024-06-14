@@ -7,10 +7,10 @@ weight: 1
 heading: "Georgen Terrassen: Eventlocation in Hannover"
 subheading: "Eventlocation in Hannover"
 breadcrumb: "Eventlocations"
-bg_image: "https://handgroup.b-cdn.net/locations/georgen-terrassen/display3.jpg"
+bg_image: "/uploads/gt-3.webp"
 
 details:
-  image: "https://handgroup.b-cdn.net/locations/georgen-terrassen/display3.jpg"
+  image: "/uploads/gt-3.webp"
   name: Georgen Terrassen
   description: "Die Eventlocation für eine Feier im Grünen in mitten der Georgen Gärten in Hannover."
   street: An der Graft 3
@@ -23,6 +23,7 @@ details:
     - Hochzeiten
 
 faq:
+  enabled: true
   title: Häufig gestellte Fragen
   heading: "Mehr über die Georgen Terrassen"
   text: "Sie haben Fragen zur Eventlocation Georgen Terrassen? Hier finden Sie **Antworten auf häufig gestellte Fragen**. Zögern Sie nicht, uns bei weiteren Fragen zu kontaktieren."
@@ -37,10 +38,14 @@ faq:
       answer: "Eventlocations in Hannover sind häufig ausgebucht, wenn es sich um beliebte Veranstaltungsorte handelt oder wenn es sich um eine Veranstaltung in der Hochsaison handelt. Wir empfehlen Ihnen daher, frühzeitig eine Anfrage zu stellen, um die Verfügbarkeit zu prüfen."
 
 gallery:
-  - alt: "Georgen Terrassen von oben"
-    image: "https://www.fiylo.de/crm/Hannover/Georgen-Terrassen/Events/georgen-terrassen-events-01.jpg"
-  - alt: "Georgen Terrassen von innen"
-    image: "https://www.fiylo.de/crm/Hannover/Georgen-Terrassen/Events/georgen-terrassen-events-02.jpg"
+  - alt: "Popup Dinner in den Georgen Terrassen 1"
+    image: "/uploads/gt-2.webp"
+  - alt: "Popup Dinner in den Georgen Terrassen 2"
+    image: "/uploads/gt-3.webp"
+  - alt: "Hochzeit in den Georgen Terrassen"
+    image: "/uploads/gt-4.webp"
+  - alt: "Mit einem Glas Wein auf den Terrassen"
+    image: "/uploads/gt-1.webp"
 ---
 
 ## Die Eventlocation für eine Feier im Grünen

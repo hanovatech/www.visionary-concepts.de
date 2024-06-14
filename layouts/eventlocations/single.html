@@ -64,6 +64,7 @@
 
 
 
+{{ if .Params.faq }}
 {{ "<!-- faq -->" | safeHTML }}
 <section class="section pb-0">
   <div class="container">
@@ -84,6 +85,7 @@
   </div>
 </section>
 {{ "<!-- faq -->" | safeHTML }}
+{{ end }}
 
 
 
@@ -107,18 +109,18 @@
 {{ "<!-- call to action -->" | safeHTML }}
 <section
   class="section overlay-secondary bg-fixed"
-  style="background-image: url('https://www.fiylo.de/crm/Hannover/Georgen-Terrassen/Events/georgen-terrassen-events-07.jpg');"
+  style="background-image: url('{{ .Params.bg_image }}');"
 >
   <div class="container">
     <div class="row">
       <div class="col-lg-7 col-md-10 col-11 text-center mx-auto">
         <h2 class="section-title text-white">Unterstützung gefällig?<br>Wir helfen Ihnen!</h2>
-        <a href="/eventlocations" class="btn btn-primary hover-ripple">
+        <a href="/anfragen" class="btn btn-primary hover-ripple">
           Jetzt anfragen
         </a>
         <div class="mt-12 flex flex-col lg:flex-row lg:justify-between gap-6">
-          <a href="#" class="!text-white text-lg font-light"><span class="hidden lg:inline">←</span> Unsere Eventlocations <span class="inline lg:hidden">→</span></a>
-          <a href="#" class="!text-white text-lg font-light">Unsere Dienstleitungen →</a>
+          <a href="/eventlocations" class="!text-white text-lg font-light"><span class="hidden lg:inline">←</span> Unsere Eventlocations <span class="inline lg:hidden">→</span></a>
+          <a href="/eventservices" class="!text-white text-lg font-light">Unsere Dienstleitungen →</a>
         </div>
       </div>
     </div>

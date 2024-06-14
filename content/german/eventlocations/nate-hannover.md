@@ -7,7 +7,7 @@ weight: 4
 heading: "NATE Hannover"
 subheading: "Eventlocation in Hannover"
 breadcrumb: "Eventlocations"
-bg_image: "https://scontent-muc2-1.xx.fbcdn.net/v/t39.30808-6/431546798_740158738250949_7740509530141513578_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=gY86uwlGBTAQ7kNvgG17Tjt&_nc_ht=scontent-muc2-1.xx&oh=00_AYBaRxuTO9lJ1gYl-SVm8jckGkk3XZn__UXtGd0r4WH1Hw&oe=666DF24F"
+bg_image: "/uploads/nate-2.webp"
 
 details:
   image: "https://scontent-muc2-1.xx.fbcdn.net/v/t39.30808-6/431546798_740158738250949_7740509530141513578_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=gY86uwlGBTAQ7kNvgG17Tjt&_nc_ht=scontent-muc2-1.xx&oh=00_AYBaRxuTO9lJ1gYl-SVm8jckGkk3XZn__UXtGd0r4WH1Hw&oe=666DF24F"
@@ -22,12 +22,21 @@ details:
     - Hochzeiten
 
 gallery:
-  - alt: "Georgen Terrassen von oben"
-    image: "https://www.fiylo.de/crm/Hannover/Georgen-Terrassen/Events/georgen-terrassen-events-01.jpg"
-  - alt: "Georgen Terrassen von innen"
-    image: "https://www.fiylo.de/crm/Hannover/Georgen-Terrassen/Events/georgen-terrassen-events-02.jpg"
+  - image: "/uploads/nate-1.webp"
+  - image: "/uploads/nate-2.webp"
+  - image: "/uploads/nate-3.webp"
+  - image: "/uploads/nate-4.webp"
+  - image: "/uploads/nate-5.webp"
+  - image: "/uploads/nate-6.webp"
+  - image: "/uploads/nate-7.webp"
+  - image: "/uploads/nate-8.webp"
 ---
 
-## Die Eventlocation für eine Feier im Grünen
+## Stilvolle Eventlocation im historischen Tiedthof
 
-Die Georgen Terrassen in Hannover bieten Ihnen die Möglichkeit, Ihre Veranstaltung in einem grünen und idyllischen Ambiente zu feiern.
+Das NATE befindet sich direkt in Hannovers City, im historischen Tiedthof gegenüber vom bekannten Anzeigerhochhaus. Die zentrale Lage ermöglicht einen bequemen Zugang und verspricht einzigartige Erlebnisse - ganz gleich - um welche Art von Event es sich handelt. Die Location punktet vor allem durch seine gute Verkehrsanbindung und Nähe zu einer Vielzahl von Hotels.
+
+Von Dinner Events und Messe Partys, über Sommerfeste und private Feierlichkeiten bis hin zu kulturellen Höhepunkten – hier finden Ideen Raum, um groß herauszukommen.
+Die Location verfügt über vier vollausgestattete Bars. Sie erhalten ein exklusives Angebot an Speisen und Getränken für Ihr Event, das nach höchsten Ansprüchen vom Küchen- und Bar-Team fortwährend verfeinert wird.
+
+Ausgebildetes Service-Personal und professionelle Bartender verleihen Ihrem Event den besonderen Charme.
