@@ -110,6 +110,7 @@
 
 
 
+{{ if .Params.eventlocations.enabled }}
 {{ "<!-- eventlocations -->" | safeHTML }}
 <section class="section pb-0 bg-gray-white">
   <div class="pb-4">
@@ -117,8 +118,9 @@
       <div class="row">
         <div class="col-md-8">
           <div class="section-title-border"></div>
-          <span class="block section-title-sm uppercase">Eventlocations in Hannover</span>
-          <h2>Locations für jedes Event</h2>
+          <span class="block section-title-sm uppercase">{{ .Params.eventlocations.subheading }}</span>
+          <h2>{{ .Params.eventlocations.heading }}</h2>
+          {{ if .Params.eventlocations.text }}<p>{{ .Params.eventlocations.text }}</p>{{ end }}
         </div>
         <div class="col-md-4 text-right align-self-end d-md-block d-none">
           <a href="/eventlocations" class="btn btn-primary mb-3 hover-ripple">
@@ -161,9 +163,11 @@
   </div>
 </section>
 {{ "<!-- /eventlocations -->" | safeHTML }}
+{{ end }}
 
 
 
+{{ if .Params.eventservices.enabled }}
 {{ "<!-- eventservices -->" | safeHTML }}
 <section class="section bg-gray-white">
   <div class="pb-4">
@@ -171,8 +175,9 @@
       <div class="row">
         <div class="col-md-8">
           <div class="section-title-border"></div>
-          <span class="block section-title-sm uppercase">Event Services</span>
-          <h2>Unterstützung für Ihr Event</h2>
+          <span class="block section-title-sm uppercase">{{ .Params.eventservices.subheading }}</span>
+          <h2>{{ .Params.eventservices.heading }}</h2>
+          {{ if .Params.eventservices.text }}<p>{{ .Params.eventservices.text }}</p>{{ end }}
         </div>
         <div class="col-md-4 text-right align-self-end d-md-block d-none">
           <a href="/eventservices" class="btn btn-primary mb-3 hover-ripple">
@@ -214,6 +219,7 @@
   </div>
 </section>
 {{ "<!-- /eventservices -->" | safeHTML }}
+{{ end }}
 
 
 
@@ -243,6 +249,7 @@
 
 
 
+{{ if .Params.mobileevents.enabled }}
 {{ "<!-- mobile-events -->" | safeHTML }}
 <section class="section bg-gray-white pb-0">
   <div class="pb-4">
@@ -250,8 +257,9 @@
       <div class="row">
         <div class="col-md-8">
           <div class="section-title-border"></div>
-          <span class="block section-title-sm uppercase">Mobile Events</span>
-          <h2>Mobile Events, immer und überall</h2>
+          <span class="block section-title-sm uppercase">{{ .Params.mobileevents.subheading }}</span>
+          <h2>{{ .Params.mobileevents.heading }}</h2>
+          {{ if .Params.mobileevents.text }}<p>{{ .Params.mobileevents.text }}</p>{{ end }}
         </div>
         <div class="col-md-4 text-right align-self-end d-md-block d-none">
           <a href="/event-services" class="btn btn-primary mb-3 hover-ripple">
@@ -293,9 +301,11 @@
   </div>
 </section>
 {{ "<!-- /mobile-events -->" | safeHTML }}
+{{ end }}
 
 
 
+{{ if .Params.entertainment.enabled }}
 {{ "<!-- entertainment -->" | safeHTML }}
 <section class="section bg-gray-white">
   <div class="pb-4">
@@ -303,8 +313,9 @@
       <div class="row">
         <div class="col-md-8">
           <div class="section-title-border"></div>
-          <span class="block section-title-sm uppercase">Entertainment</span>
-          <h2>Unterhaltung für Ihr Event</h2>
+          <span class="block section-title-sm uppercase">{{ .Params.entertainment.subheading }}</span>
+          <h2>{{ .Params.entertainment.heading }}</h2>
+          {{ if .Params.entertainment.text }}<p>{{ .Params.entertainment.text }}</p>{{ end }}
         </div>
         <div class="col-md-4 text-right align-self-end d-md-block d-none">
           <a href="/eventservices" class="btn btn-primary mb-3 hover-ripple">
@@ -346,6 +357,7 @@
   </div>
 </section>
 {{ "<!-- /entertainment -->" | safeHTML }}
+{{ end }}
 
 
 

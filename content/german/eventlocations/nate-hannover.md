@@ -22,14 +22,16 @@ details:
     - Hochzeiten
 
 gallery:
-  - image: "/uploads/nate-1.webp"
-  - image: "/uploads/nate-2.webp"
-  - image: "/uploads/nate-3.webp"
-  - image: "/uploads/nate-4.webp"
-  - image: "/uploads/nate-5.webp"
-  - image: "/uploads/nate-6.webp"
-  - image: "/uploads/nate-7.webp"
-  - image: "/uploads/nate-8.webp"
+  enabled: false
+  images:
+    - image: "/uploads/nate-1.webp"
+    - image: "/uploads/nate-2.webp"
+    - image: "/uploads/nate-3.webp"
+    - image: "/uploads/nate-4.webp"
+    - image: "/uploads/nate-5.webp"
+    - image: "/uploads/nate-6.webp"
+    - image: "/uploads/nate-7.webp"
+    - image: "/uploads/nate-8.webp"
 ---
 
 ## Stilvolle Eventlocation im historischen Tiedthof

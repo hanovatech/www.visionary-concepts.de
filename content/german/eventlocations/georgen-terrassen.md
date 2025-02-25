@@ -38,14 +38,16 @@ faq:
       answer: "Eventlocations in Hannover sind häufig ausgebucht, wenn es sich um beliebte Veranstaltungsorte handelt oder wenn es sich um eine Veranstaltung in der Hochsaison handelt. Wir empfehlen Ihnen daher, frühzeitig eine Anfrage zu stellen, um die Verfügbarkeit zu prüfen."
 
 gallery:
-  - alt: "Popup Dinner in den Georgen Terrassen 1"
-    image: "/uploads/gt-2.webp"
-  - alt: "Popup Dinner in den Georgen Terrassen 2"
-    image: "/uploads/gt-3.webp"
-  - alt: "Hochzeit in den Georgen Terrassen"
-    image: "/uploads/gt-4.webp"
-  - alt: "Mit einem Glas Wein auf den Terrassen"
-    image: "/uploads/gt-1.webp"
+  enabled: true
+  images:
+    - alt: "Popup Dinner in den Georgen Terrassen 1"
+      image: "/uploads/gt-2.webp"
+    - alt: "Popup Dinner in den Georgen Terrassen 2"
+      image: "/uploads/gt-3.webp"
+    - alt: "Hochzeit in den Georgen Terrassen"
+      image: "/uploads/gt-4.webp"
+    - alt: "Mit einem Glas Wein auf den Terrassen"
+      image: "/uploads/gt-1.webp"
 ---
 
 ## Die Eventlocation für eine Feier im Grünen

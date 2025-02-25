@@ -66,7 +66,7 @@
 
 {{ if .Params.faq }}
 {{ "<!-- faq -->" | safeHTML }}
-<section class="section pb-0">
+<section class="section">
   <div class="container">
       <span class="block mb-2 text-xl text-primary font-bold uppercase">{{ if .Params.faq.title }}{{ .Params.faq.title }}{{ else }}FAQ{{ end }}</span>
       <h2>{{ .Params.faq.heading }}</h2>
@@ -89,12 +89,13 @@
 
 
 
+{{ if .Params.gallery.enabled }}
 {{ "<!-- gallery -->" | safeHTML }}
-<section class="section">
+<section class="section pt-0">
   <div class="container">
     <h2 class="mb-6">Gallerie</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {{ range .Params.gallery }}
+      {{ range .Params.gallery.images }}
         <a data-fslightbox href="{{ .image | absURL }}" class="hover:scale-105">
           <img loading="lazy" src="{{ .image | absURL }}" alt="{{ .alt }}" class="img-fluid w-full !h-[250px] object-cover">
         </a>
@@ -103,6 +104,7 @@
   </div>
 </section>
 {{ "<!-- /gallery -->" | safeHTML }}
+{{ end }}
 
 
 

@@ -32,22 +32,15 @@ banner_feature:
   enable : true
   # Max use 4 item
   feature_item:
-    # banner feature item loop
     - name : "Eventplanung"
       icon : "fas fa-calendar-check" # font-awesome 5 : https://fontawesome.com/icons/
       content : "Lorem ipsum dolor sit amet constur adipelit sed."
-      
-    # banner feature item loop
     - name : "Locations"
       icon : "fas fa-search-location" # font-awesome 5 : https://fontawesome.com/icons/
       content : "Lorem ipsum dolor sit amet constur adipelit sed."
-      
-    # banner feature item loop
     - name : "Catering"
       icon : "fas fa-pizza-slice" # font-awesome 5 : https://fontawesome.com/icons/
       content : "Lorem ipsum dolor sit amet constur adipelit sed."
-      
-    # banner feature item loop
     - name : "Technik"
       icon : "fas fa-cogs" # font-awesome 5 : https://fontawesome.com/icons/
       content : "Lorem ipsum dolor sit amet constur adipelit sed."
@@ -55,7 +48,7 @@ banner_feature:
 
 ################################## about ####################################
 about:
-  enable : true
+  enable : false
   subtitle : "About Us"
   title : "We Are Dynamic Team and Business Agency"
   content : "Excepteur sint occaecat cupidatat non proident sunt iculpa qui officia deserunt mollit anim est. laborum sed perspiciatis unde omnis natus error sit voluptatem accusantium."
@@ -72,27 +65,34 @@ about:
 funfacts :
   enable : true
   funfacts_item :
-    # fanfacts item loop
     - name : "project done"
       count : "50"
       icon : "fas fa-bullseye" # font-awesome 5 : https://fontawesome.com/icons/
-      
-    # fanfacts item loop
     - name : "Years Experience"
       count : "25"
       icon : "far fa-calendar-alt" # font-awesome 5 : https://fontawesome.com/icons/
-      
-    # fanfacts item loop
     - name : "Awards Win"
       count : "250"
       icon : "fas fa-award" # font-awesome 5 : https://fontawesome.com/icons/
-      
-    # fanfacts item loop
     - name : "Happy Coustomers"
       count : "500"
       icon : "far fa-smile" # font-awesome 5 : https://fontawesome.com/icons/
+      
+############################## eventlocations ###########################
+eventlocations:
+  enabled : true
+  heading : "Locations für jedes Event"
+  subheading: Eventlocations in Hannover
+  text : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      
+############################## eventservices ###########################
+eventservices:
+  enabled : true
+  heading : "Unterstützung für Ihr Event"
+  subheading: Event Services
+  text : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
-################################# cta ################################################
+################################# cta ##################################
 cta:
   enable : true
   title : "Unterstützung gefällig?<br>Wir helfen Ihnen gerne weiter!"
@@ -102,6 +102,20 @@ cta:
     enable : true
     label : "Jetzt anrufen"
     link : "contact/"
+      
+############################## mobile-events ###########################
+mobileevents:
+  enabled : false
+  heading : "Mobile Events, immer und überall"
+  subheading: Mobile Events
+  text : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      
+############################## eventservices ###########################
+entertainment:
+  enabled : false
+  heading : "Unterhaltung für Ihr Event"
+  subheading: Entertainment
+  text : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
 ########################### steps ############################
 steps:
