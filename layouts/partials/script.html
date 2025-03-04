@@ -1,12 +1,6 @@
 <script>
   var saveBtn = document.getElementById("vcard-button");
   saveBtn.addEventListener("click", function () {
-    // Get the contact information from the website
-    var contact = {
-      name: "Tim Lösch",
-      phone: "+491634883127",
-      email: "loesch@visionary-concepts.de",
-    };
     // create a vcard file
     var vcard =
       "BEGIN:VCARD\nVERSION:3.0\nN;CHARSET=UTF-8:Lösch;Tim;;;\nFN;CHARSET=UTF-8: Tim Lösch\nORG;CHARSET=UTF-8:Visionary Concepts GmbH\nTITLE;CHARSET=UTF-8:CEO & Founder\nURL;WORK:www.visionary-concepts.de\nEMAIL;type=WORK;type=PREF:loesch@visionary-concepts.de\nTEL;type=CELL;MOBILE:+491634883127\nADR;CHARSET=UTF-8;WORK;type=pref:;;Marienstr. 26;Hannover;;30171;Deutschland\nLABEL;WORK;PREF;ENCODING=QUOTED-PRINTABLE;CHARSET=UTF-8:Marienstr. 26=0D=0A=\n30171 Hannover Deutschland\nREV:2025-02-25T17:39:18+01:00\nEND:VCARD";

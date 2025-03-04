@@ -22,7 +22,7 @@ www.hannover.ihk.de
 
 ## Kontakt
 
-**Telefon**: +49 (0) ???  
+**Telefon**: +49 (0) 163 4883127  
 **E-Mail**: info@visionary-concepts.de  
 **Internet**: visionary-concepts.de
 
