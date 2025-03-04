@@ -1,42 +1,10 @@
-<meta charset="utf-8">
-<title>{{with .Title}}{{.}}{{else}}{{site.Title}}{{end}}</title>
+<title>{{ .Title }}</title>
 
-{{ if or (eq site.BaseURL "/") (eq site.BaseURL "http://localhost:1313/") (eq site.BaseURL "http://examplesite.org/") (eq site.BaseURL "https://examplesite.org/") (eq site.BaseURL "http://examplesite.com/") (eq site.BaseURL "https://examplesite.com/")}}{{else}}
-<base href="{{ site.BaseURL }}">
-{{ end }}
+<meta charset="utf-8" />
+<meta name="author" content="Visionary Concepts GmbH" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<!-- multilingual SEO optimizations -->
-{{ if .IsTranslated }}
-{{ range .AllTranslations }}
-<link rel="alternate" hreflang="{{.Lang}}" href="{{ .Permalink }}">
-{{ end }}
-<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
-{{ end }}
-
-<meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
-{{ with site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
-{{ hugo.Generator }}
-
-<!-- mobile responsive meta -->
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-
-<!-- Tailwind CSS Links Start -->
-{{ $twstyles := resources.Get "tailwind/styles.scss" | toCSS | postCSS (dict "config" "./assets/tailwind/postcss.config.js") | minify | fingerprint | resources.PostProcess }}
-<link rel="stylesheet" href="{{ $twstyles.RelPermalink }}" integrity="{{ $twstyles.Data.Integrity }}">
-<!-- Tailwind CSS Links End -->
-
-<!-- Custom CSS Links Start -->
-{{ $customstyles := resources.Get "scss/custom.scss" | toCSS | minify | fingerprint | resources.PostProcess }}
-<link rel="stylesheet" href="{{ $customstyles.RelPermalink }}" integrity="{{ $customstyles.Data.Integrity }}">
-<!-- Custom CSS Links End -->
-
-<!-- theme color meta -->
-{{with site.Params.variables.primary_color}}<meta name="theme-color" content="{{.}}">{{end}}
-
-{{ with .Params.image }}
-<meta property="og:image" content="{{ . | absURL }}">
-{{ end }}
-{{ template "_internal/opengraph.html" . }}
-{{ template "_internal/twitter_cards.html" . }}
-{{ template "_internal/google_analytics.html" . }}
-{{ site.Params.custom_script | safeHTML }}
+<link href="/css/style.css" rel="stylesheet" />
+<link href="/css/typebase.css" rel="stylesheet" />
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
