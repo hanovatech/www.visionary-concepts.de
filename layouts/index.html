@@ -75,17 +75,86 @@
       Ihnen zu folgenden Themen...
     </h2>
     <ul class="flex flex-col gap-4 mt-10 max-w-xs mx-auto text-center">
-      <li class="bg-sky-100 p-4 rounded-lg shadow uppercase">HOTBOXXX</li>
-      <li class="bg-blue-100 p-4 rounded-lg shadow uppercase">Container</li>
-      <li class="bg-indigo-100 p-4 rounded-lg shadow uppercase">
-        Mobile Foodwände
+      <li>
+        <a class="block bg-sky-100 p-4 rounded-lg shadow uppercase" href="#contact-form">HOTBOXXX</a>
       </li>
-      <li class="bg-violet-100 p-4 rounded-lg shadow uppercase">
-        Gastrokonzepte
+      <li>
+        <a class="block bg-blue-100 p-4 rounded-lg shadow uppercase" href="#contact-form">Container</a>
       </li>
-      <li class="bg-purple-100 p-4 rounded-lg shadow uppercase">Inklujob</li>
-      <li class="bg-fuchsia-100 p-4 rounded-lg shadow uppercase">Events</li>
+      <li>
+        <a class="block bg-indigo-100 p-4 rounded-lg shadow uppercase" href="#contact-form">Mobile Foodwände</a>
+      </li>
+      <li>
+        <a class="block bg-violet-100 p-4 rounded-lg shadow uppercase" href="#contact-form">Gastrokonzepte</a>
+      </li>
+      <li>
+        <a class="block bg-purple-100 p-4 rounded-lg shadow uppercase" href="#contact-form">Inklujob</a>
+      </li>
+      <li>
+        <a class="block bg-fuchsia-100 p-4 rounded-lg shadow uppercase" href="#contact-form">Events</a>
+      </li>
     </ul>
+  </section>
+
+  <section id="contact-form" class="mt-12 sm:mt-18 scroll-mt-16">
+    <form action="https://api.web3forms.com/submit" method="POST" class="py-8 px-4 bg-gray-50 sm:border sm:border-gray-200 sm:rounded-md">
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+      <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+        <div class="sm:col-span-2">
+          <label for="name" class="block text-sm/6 font-semibold text-gray-900">Dein Name</label>
+          <div class="mt-2.5">
+            <input type="text" name="first-name" id="first-name" autocomplete="given-name" required class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600">
+          </div>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="company" class="block text-sm/6 font-semibold text-gray-900">Ggf. Unternehmen</label>
+          <div class="mt-2.5">
+            <input type="text" name="company" id="company" autocomplete="organization" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600">
+          </div>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="email" class="block text-sm/6 font-semibold text-gray-900">Email-Adresse</label>
+          <div class="mt-2.5">
+            <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600">
+          </div>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="phone-number" class="block text-sm/6 font-semibold text-gray-900">Telefonnummer</label>
+          <div class="mt-2.5">
+            <input type="text" name="phone-number" id="phone-number" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600" placeholder="0123456789">
+          </div>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="topic" class="block text-sm/6 font-semibold text-gray-900">Zu welchem Thema möchtest du dich austauschen?</label>
+          <div class="mt-2.5">
+            <select name="topic" id="topic" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600">
+              <option>Bitte auswählen...</option>
+              <option>HOTBOXXX</option>
+              <option>Container</option>
+              <option>Mobile Foodwände</option>
+              <option>Gastrokonzepte</option>
+              <option>Inklujob</option>
+              <option>Events</option>
+            </select>
+          </div>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="message" class="block text-sm/6 font-semibold text-gray-900">Deine Nachricht</label>
+          <div class="mt-2.5">
+            <textarea name="message" id="message" rows="4" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600"></textarea>
+          </div>
+        </div>
+        <div class="flex gap-x-4 sm:col-span-2">
+          <input type="checkbox" id="accept-privacy" name="accept-privacy" required />
+          <label class="text-sm/6 text-gray-600" id="switch-1-label">
+            Ich bin mit der <a href="/datenschutz" class="font-semibold text-gray-600">Datenschutzerklärung</a> einverstanden.
+          </label>
+        </div>
+      </div>
+      <div class="mt-10">
+        <button type="submit" class="block w-full rounded-md bg-gray-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">Let's talk</button>
+      </div>
+    </form>
   </section>
 </main>
 {{ end }}
