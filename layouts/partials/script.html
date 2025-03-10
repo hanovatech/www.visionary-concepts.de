@@ -8,8 +8,8 @@
     var url = URL.createObjectURL(blob);
 
     const newLink = document.createElement("a");
-    newLink.download = contact.name + ".vcf";
-    newLink.textContent = contact.name;
+    newLink.download = "loesch.vcf";
+    newLink.textContent = "Tim Lösch";
     newLink.href = url;
 
     newLink.click();

@@ -11,8 +11,8 @@ Marienstr. 23
 30171 Hannover
 
 **Geschäftsführer**: Tim Lösch  
-**Umsatzsteuer-ID**: ???  
-**Handelsregister**: ???  
+**Umsatzsteuer-ID**: DE366953119  
+**Handelsregister**: HRB 226919  
 Amtsgericht Hannover  
 
 **Zuständige Kammer**  
@@ -23,13 +23,13 @@ www.hannover.ihk.de
 ## Kontakt
 
 **Telefon**: +49 (0) 163 4883127  
-**E-Mail**: info@visionary-concepts.de  
+**E-Mail**: loesch@visionary-concepts.de  
 **Internet**: visionary-concepts.de
 
 ## Inhaltlich verantwortlich
 
 Visionary Concepts GmbH  
-info@visionary-concepts.de
+loesch@visionary-concepts.de
 
 ---
 
